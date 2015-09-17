@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>How to Submit an Orion Patch to Gerrit</title>
+</head>
+<body>
+	<h1>Steps for submitting an Orion patch to Gerrit</h1>
+	<p>
+		Starting from scratch with a clean, synchronized workspace, here are the steps to make a change and submit a patch for Orion.
+	</p>
+
+	<h2>Start with a clean workspace</h2>
+	<ul>
+		<li><a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Orion">Open an Orion bug</a> or <a href="https://bugs.eclipse.org/bugs/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=Orion">choose a bug to fix</a>.</li>
+		<li>Using the <code>Reference:</code> dropdown, checkout origin/master. You should see <code>Reference: master => origin/master</code>.</li>
+		<li>Use the <code>Reference:</code> dropdown again to create a new branch. The branch name should be <code>BugX</code>, where <code>X</code> is the bugzilla bug number.</li>
+	</ul>
+	<img src="images/step1.png" alt="Reference: master points to origin/master"></img>
+	
+	<h2>Create and check out a <code>BugX</code> branch</h2>
+	<ul>
+		<li>Find your new branch under <code>Local</code>, and check it out.</li>
+		<li>The <code>Reference:</code> should now be <code>Reference: BugX => origin/BugX [New branch]</code>.</li>
+		<li>Navigate to the <code>Editor</code> page</li>
+		<li>Now you can make and test your changes.</li>
+	</ul>
+	<img src="images/step2.png" alt=""></img>
+	
+	<h2>When your changes are ready to commit...</h2>
+	<ul>
+		<li>When your changes are ready to commit, navigate to the <code>Git</code> page.</li>
+		<li>The <code>Reference:</code> should still be <code>Reference: BugX => origin/BugX [New branch]</code>.</li>
+		<li>Click on <code>more ...</code> and select <code>Add Change-ID to message</code> and <code>Add Signed-off-by to message</code>.</li>
+		<li>Make sure the <code>Author</code> and <code>Committer</code> name and email are correct.</code></li>
+		<li>Copy the bug number/title from the bugzilla bug, and paste into the commit comment.</li>
+		<li>Select the files to commit (assuming you have already reviewed and tested the changes).</code></li>
+		<li>Click <code>Commit</code> to commit your changes to the branch.</li>
+	</ul>
+	<img src="images/step3.png" alt=""></img>
+	
+	<h2>Pushing your changes to Gerrit</h2>
+	<ul>
+		<li>Type <code>review/for/master</code> into the <code>Reference:</code> dropdown's filter to find the Gerrit review branch.</li>
+		<li>Select the <code>review/for/master</code> branch. (Do not check it out).</li>
+		<li>The <code>Reference:</code> should now be <code>Reference: BugX => review/for/master</code>.</li>
+		<li>Click on <code>more ...</code> for your outgoing change to verify that everything looks good.</li>
+		<li>Click <code>Push</code> to push your <code>BugX</code> branch to Gerrit.</li>
+	</ul>
+	<img src="images/step4.png" alt=""></img>
+	
+	<h2>After your changes have been pushed for review</h2>
+	<ul>
+		<li>Check out the <code>master</code> branch under <code>local</code> in the <code>Reference:</code> dropdown.</li>
+		<li>The <code>Reference:</code> should be <code>Reference: master => origin/master</code>.</li>
+		<li>Click <code>Sync</code> to bring in any incoming changes.</li>
+		<li>You are now ready to create a new branch to work on a new bug.</li>
+	</ul>
+	<img src="images/step5.png" alt=""></img>
+	
+	<h2>Follow <code>BugX</code> through the Gerrit review process</h2>
+	<ul>
+		<li>Log in to <a href="https://git.eclipse.org/r/">Eclipse Orion's Gerrit Code Review page</a>.</li>
+		<li>Click on <code>BugX</code> in the list of outgoing reviews.</li>
+		<li>Click on <code>Add...</code> to add reviewers for the change.</li>
+		<li>Respond to comments from reviewers.</li>
+	</ul>
+</body>
+</html>
