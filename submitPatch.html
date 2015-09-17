@@ -16,7 +16,7 @@
 		<li>Using the <code>Reference:</code> dropdown, checkout origin/master. You should see <code>Reference: master => origin/master</code>.</li>
 		<li>Use the <code>Reference:</code> dropdown again to create a new branch. The branch name should be <code>BugX</code>, where <code>X</code> is the bugzilla bug number.</li>
 	</ul>
-	<img src="images/step1.png" alt="Reference: master points to origin/master"></img>
+	<img src="images/step1.png" alt="Reference dropdown: master points to origin/master"></img>
 	
 	<h2>Create and check out a <code>BugX</code> branch</h2>
 	<ul>
@@ -25,7 +25,7 @@
 		<li>Navigate to the <code>Editor</code> page</li>
 		<li>Now you can make and test your changes.</li>
 	</ul>
-	<img src="images/step2.png" alt=""></img>
+	<img src="images/step2.png" alt="Reference dropdown: BugX points to origin/BugX new branch"></img>
 	
 	<h2>When your changes are ready to commit...</h2>
 	<ul>
@@ -37,7 +37,7 @@
 		<li>Select the files to commit (assuming you have already reviewed and tested the changes).</code></li>
 		<li>Click <code>Commit</code> to commit your changes to the branch.</li>
 	</ul>
-	<img src="images/step3.png" alt=""></img>
+	<img src="images/step3.png" alt="Committing the changes to the BugX branch"></img>
 	
 	<h2>Pushing your changes to Gerrit</h2>
 	<ul>
@@ -47,7 +47,7 @@
 		<li>Click on <code>more ...</code> for your outgoing change to verify that everything looks good.</li>
 		<li>Click <code>Push</code> to push your <code>BugX</code> branch to Gerrit.</li>
 	</ul>
-	<img src="images/step4.png" alt=""></img>
+	<img src="images/step4.png" alt="Pushing the BugX branch to Gerrit"></img>
 	
 	<h2>After your changes have been pushed for review</h2>
 	<ul>
@@ -56,14 +56,16 @@
 		<li>Click <code>Sync</code> to bring in any incoming changes.</li>
 		<li>You are now ready to create a new branch to work on a new bug.</li>
 	</ul>
-	<img src="images/step5.png" alt=""></img>
+	<img src="images/step5.png" alt="Reference dropdown: master points to origin/master"></img>
 	
 	<h2>Follow <code>BugX</code> through the Gerrit review process</h2>
 	<ul>
 		<li>Log in to <a href="https://git.eclipse.org/r/">Eclipse Orion's Gerrit Code Review page</a>.</li>
 		<li>Click on <code>BugX</code> in the list of outgoing reviews.</li>
 		<li>Click on <code>Add...</code> to add reviewers for the change.</li>
-		<li>Respond to comments from reviewers.</li>
+		<li>Respond to comments from reviewers, and make changes if necessary.</li>
+		<li>When reviewers are happy, they will push the changes to master.</li>
+		<li>Change the <code>Status</code> of <code>BugX</code> to <code>RESOLVED - FIXED</code>.</li>
 	</ul>
 </body>
 </html>
