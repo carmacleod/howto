@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>How to Merge a Github Repo with Local Fork</title>
+</head>
+<body>
+	<h1>Steps for merging new changes in a Github repo back into a local fork of the repo in Orion</h1>
+	<p>
+		Starting from scratch with a clean, synchronized workspace, here are the steps to
+		merge changes in a Github repo back into a local fork of the repo in Orion.
+		(Assuming that you already forked the repo on github and cloned it into Orion).
+	</p>
+
+	<h2>Start with a clean workspace</h2>
+	<ul>
+		<li>Navigate to the Orion Git page</li>
+		<li>Make sure that the <code>Repository:</code> dropdown points to the clone of the github repo.</li>
+		<li>Refresh your browser page (<code>F5</code>) and make sure there are no local changes.</li>
+		<li>Using the <code>Reference:</code> dropdown, checkout origin/master. You should see <code>Reference: master => origin/master</code>.</li>
+	</ul>
+	<img src="images/step1-merge.png" alt="Reference dropdown: master points to origin/master"></img>
+
+	<h2>One time only: Create a new Remote</h2>
+	<ul>
+		<li>Use the <code>Reference:</code> dropdown to create a New Remote.</li>
+		<li>The remote name should be recognizable as "the original repo".</li>
+		<li>Use the URL for the github repo that you originally forked from.</li>
+	</ul>
+	<img src="images/step2-merge.png" alt="Reference dropdown: creating a remote to represent the original repo"></img>
+
+	<h2>Select the Remote</h2>
+	<ul>
+		<li>Use the <code>Reference:</code> dropdown to select the remote.</li>
+		<li>You should see <code>Reference: master => theoriginal/master</code>.</li>
+	</ul>
+	<img src="images/step3-merge.png" alt="Reference dropdown: local master points to theoriginal/master"></img>
+
+	<h2>Fetch and Merge from the Remote</h2>
+	<ul>
+		<li>Click <code>Fetch</code> to see any Incoming changes from the original remote.</li>
+		<li>Then click the <code>Merge</code> button to merge those changes into your local master.</li>
+	</ul>
+	<img src="images/step4-merge.png" alt="Reference dropdown: fetch and merge"></img>
+</body>
+</html>
