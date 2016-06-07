@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>How to Merge a Github Repo with Local Fork</title>
+	<title>How to Merge a Github Repo with your Local Fork</title>
 </head>
 <body>
 	<h1>Steps for merging new changes in a Github repo back into a local fork of the repo in Orion</h1>
 	<p>
-		Starting from scratch with a clean, synchronized workspace, here are the steps to
-		merge changes in a Github repo back into a local fork of the repo in Orion.
-		(Assuming that you already forked the repo on github and cloned it into Orion).
+		Starting from scratch with a clean, synchronized workspace, here are the steps to merge changes
+		in a Github repo (i.e. from other people) back into your local fork of the repo in Orion.
+		<br>(Assuming that you already forked the repo on github and cloned it into Orion).
 	</p>
 
 	<h2>Start with a clean workspace</h2>
 	<ul>
 		<li>Navigate to the Orion Git page</li>
-		<li>Make sure that the <code>Repository:</code> dropdown points to the clone of the github repo.</li>
+		<li>Make sure that the <code>Repository:</code> dropdown points to your clone of the github repo (i.e. the fork).</li>
 		<li>Refresh your browser page (<code>F5</code>) and make sure there are no local changes.</li>
-		<li>Using the <code>Reference:</code> dropdown, checkout origin/master. You should see <code>Reference: master => origin/master</code>.</li>
+		<li>Using the <code>Reference:</code> dropdown, checkout origin/master. You should see <code>Reference: master => origin/master</code>.
+			<br>i.e. the "Remote" is <code>origin</code> and the "Local <code>master</code> branch" is connected to the "Remote <code>master</code> branch".</li>
 	</ul>
 	<img src="images/step1-merge.png" alt="Reference dropdown: master points to origin/master"></img>
 
@@ -39,8 +40,15 @@
 	<h2>Fetch and Merge from the Remote</h2>
 	<ul>
 		<li>Click <code>Fetch</code> to see any Incoming changes from the original remote.</li>
-		<li>Then click the <code>Merge</code> button to merge those changes into your local master.</li>
+		<li>Then click the <code>Merge</code> button to merge those changes into your local <code>master</code> branch.</li>
 	</ul>
 	<img src="images/step4-merge.png" alt="Reference dropdown: fetch and merge"></img>
+
+	<h2>Push to your Remote</h2>
+	<ul>
+		<li>Use the <code>Reference:</code> dropdown to go back to the remote for your fork (<code>origin</code>).</li>
+		<li>Click the <code>Push</code> button to push the changes out to your fork on github.</li>
+	</ul>
+	<img src="images/step5-merge.png" alt="Push to the remote for your fork"></img>
 </body>
 </html>
