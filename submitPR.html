@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>How to contribute to a GitHub repository using Orion</title>
+</head>
+<body>
+	<main>
+	<h1>Contributing to a GitHub repository using Orion</h1>
+	<p>
+		Here's the basic workflow (step by step details follow):
+		<ul>
+			<li>First time contributing to a specific repo:
+				<ul>
+					<li><a href="#fork">Fork the GitHub repo</a></li>
+					<li><a href="#clone">Clone your fork into Orion</a></li>
+					<li><a href="#remote">Create the upstream remote</a></li>
+				</ul>
+			</li>
+			<li>For each contribution to that repo:
+				<ul>
+					<li><a href="#fetch">Fetch from the upstream remote and merge into your fork</a></li>
+					<li><a href="#branch">Create a new branch on your fork and check it out</a></li>
+					<li><a href="#commit">Make your changes and commit them to the new branch</a></li>
+					<li><a href="#push">Push to your fork</a></li>
+					<li><a href="#pr">Create the Pull Request on GitHub</a></li>
+				</ul>
+			</li>
+		</ul>
+	</p>
+
+// WARNING: This is not finished
+
+	<section><h2 id="first-time">First time contributing to a specific repo:</h2>
+
+	<section><h3 id="fork">Fork the GitHub repo</h3>
+	<ol>
+		<li>Fork the repository that you want to contribute to on GitHub.<br>
+			The fork will be associated with your GitHub ID.<br>
+			<img src="images/fork.png" alt="Fork button on GitHub"></img><br><br>
+		</li>
+		<li>Copy the URL for the fork (make sure to copy the https url).<br>
+			<img src="images/copy-fork-url.png" alt="Copy the URL to clone the fork"></img>
+		</li>
+	</ol>
+	</section>
+	
+	<section><h3 id="clone">Clone your fork into Orion</h3>
+	<ol>
+		<li>Drop down the <code>Repository:</code> combo, click the <code>Clone Repository</code> button, and paste in the URL for your fork.<br>
+			<img src="images/clone.png" alt="Clone Repository dialog"></img><br><br>
+		</li>
+		<li>After the clone completes, it will be added to the <code>Repository:</code> list.<br>
+			<img src="images/after-clone.png" alt="Newly-cloned fork in Repo list"></img>
+		</li>
+	</ol>
+	</section>
+
+	<section><h3 id="remote">Create the upstream remote</h3>
+	<ol>
+		<li>Use the <code>Reference:</code> combo to create a <code>New Remote</code>. The convention is to call it "upstream".<br>
+			<strong>Note:</strong> Use the URL for the github repo that you <em>originally</em> forked from.<br>
+			<img src="images/remote.png" alt="..."></img><br><br>
+		</li>
+	</ol>
+	</section>
+	</section>
+	
+	<section><h2 id="each-time">For each contribution to the repo:</h2>
+	<ol>
+		<li>Make sure there's an open Issue for your feature or bug fix on GitHub.</li>
+		<li>Go to the Orion Git page. If you are already there, refresh the page (<code>F5</code>).</li>
+	</ol>
+
+	<section><h3 id="fetch">Fetch from the upstream remote and merge into your fork</h3>
+	<ol>
+		<li>Select the upstream remote so that you see <code>master => upstream/master</code> in the <code>Reference:</code> combo.</li>
+		<li>Use the <code>Reference:</code> combo or the Incoming <code>Fetch</code> button to fetch from the upstream remote.<br>
+			<img src="images/fetch-remote.png" alt="Reference combo Fetch button"></img><br><br>
+			<img src="images/fetch.png" alt="Incoming section Fetch button"></img><br><br>
+		</li>
+		<li>If there are Incoming changes, click the <code>Merge</code> button to merge them into your local fork (<code>origin/master</code>).<br>
+			<img src="images/merge.png" alt="Incoming section Merge button"></img><br><br>
+		</li>
+		<li>Select the remote for your local fork so that you see <code>master => origin/master</code> in the <code>Reference:</code> combo.</li>
+		<li>Click the <code>Push</code> button to push the Outgoing changes to your fork on GitHub.<br>
+			<img src="images/push.png" alt="Outgoing section Push button"></img><br><br>
+		</li>
+	</ol>
+	</section>
+
+	<section><h3 id="branch">Create a new branch on your fork and check it out</h3>
+	<ol>
+		<li>Select the remote for your local fork so that you see <code>master => origin/master</code> in the <code>Reference:</code> combo.</li>
+		<li>Use the <code>Reference:</code> combo to create a <code>New Branch</code>. The branch name should be <code>issueX</code>, where <code>X</code> is the Issue number.<br>
+			(GitHub requires a branch for each Pull Request).<br>
+			<img src="images/branch.png" alt="Reference combo New Branch button"></img><br><br>
+		</li>
+		<li>Find your new branch under <code>local</code> in the <code>Reference:</code> combo, and check it out by clicking the <code>Checkout branch</code> button.<br>
+			<img src="images/checkout.png" alt="Reference combo Checkout Branch button"></img><br><br>
+		</li>
+		<li>The <code>Reference:</code> should now be <code>issueX => <em>something</em>/issueX [New branch]</code>.<br>
+			<img src="images/new-branch-ref.png" alt="New branch selected in reference combo"></img>
+		</li>
+	</ol>
+	</section>
+	
+	<section><h3 id="commit">Make your changes and commit them to the new branch</h3>
+	<ol>
+		<li>Navigate to the <code>Editor</code> page.</li>
+		<li>Make your changes and test them. If applicable, write unit tests.</li>
+		<li>When your changes are ready to commit, navigate to, and refresh, the <code>Git</code> page.</li>
+		<li>The <code>Reference:</code> should still be <code>issueX => <em>something</em>/issueX [New branch]</code>.</li>
+		<li>Review the changes and select the file(s) to commit.</li>
+		<li>Click on <code>more ...</code> and select <code>Add Change-ID to message</code> and <code>Add Signed-off-by to message</code>.</li>
+		<li>Make sure the <code>Author</code> and <code>Committer</code> name and email are correct.<br>
+			(You can enter them here, or on the <code>Git Settings</code> page).
+		</li>
+		<li>Describe the fix or feature in the commit message. Use <code>issue #X</code> to create a link to the issue.</li>
+		<li>Click <code>Commit</code> to commit your changes to your <code>issueX</code> branch.</li>
+	</ol>
+	<img src="images/commit.png" alt="Committing the changes to the issueX branch"></img>
+	</section>
+	
+	<section><h3 id="push">Push to your fork</h3>
+	<img src="images/push.png" alt="Push to fork"></img>
+	</section>
+	
+	<section><h3 id="pr">Create the Pull Request on GitHub</h3>
+	<img src="images/pr.png" alt="Create pull request"></img>
+	</section>
+	</section>
+	
+			
+//---------- use some of the words below to populate the sections above ----------
+	<h3>Clean up your workspace</h3>
+	<ul>
+		<li>Clear the filter in the <code>Reference:</code> dropdown, and check out the <code>master</code> branch under <code>local</code>.</li>
+		<li>The <code>Reference:</code> should be <code>Reference: master => origin/master</code>.</li>
+		<li>Click <code>Sync</code> to bring in any incoming changes.</li>
+		<li>You are now ready to create a new branch to work on a new bug.</li>
+	</ul>
+	</main>
+</body>
+</html>

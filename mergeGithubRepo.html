@@ -25,28 +25,28 @@
 	<h2>One time only: Create a new Remote</h2>
 	<ul>
 		<li>Use the <code>Reference:</code> dropdown to create a New Remote.</li>
-		<li>The remote name should be recognizable as "the original repo".</li>
+		<li>The convention is to call it "upstream".</li>
 		<li>Use the URL for the github repo that you originally forked from.</li>
 	</ul>
 	<img src="images/step2-merge.png" alt="Reference dropdown: creating a remote to represent the original repo"></img>
 
-	<h2>Select the Remote</h2>
+	<h2>Select the Upstream Remote</h2>
 	<ul>
-		<li>Use the <code>Reference:</code> dropdown to select the remote.</li>
-		<li>You should see <code>Reference: master => theoriginal/master</code>.</li>
+		<li>Use the <code>Reference:</code> dropdown to select the upstream remote.</li>
+		<li>You should see <code>Reference: master => upstream/master</code>.</li>
 	</ul>
 	<img src="images/step3-merge.png" alt="Reference dropdown: local master points to theoriginal/master"></img>
 
-	<h2>Fetch and Merge from the Remote</h2>
+	<h2>Fetch for Upstream Remote and Merge into Local Master</h2>
 	<ul>
-		<li>Click <code>Fetch</code> to see any Incoming changes from the original remote.</li>
+		<li>Click <code>Fetch</code> to see any Incoming changes from the upstream remote.</li>
 		<li>Then click the <code>Merge</code> button to merge those changes into your local <code>master</code> branch.</li>
 	</ul>
 	<img src="images/step4-merge.png" alt="Reference dropdown: fetch and merge"></img>
 
-	<h2>Push to your Remote</h2>
+	<h2>Push to your Fork</h2>
 	<ul>
-		<li>Use the <code>Reference:</code> dropdown to go back to the remote for your fork (<code>origin</code>).</li>
+		<li>Use the <code>Reference:</code> dropdown to select the remote for your fork (<code>origin</code>).</li>
 		<li>Click the <code>Push</code> button to push the changes out to your fork on github.</li>
 	</ul>
 	<img src="images/step5-merge.png" alt="Push to the remote for your fork"></img>
