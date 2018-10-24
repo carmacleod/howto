@@ -74,7 +74,7 @@
 
 	<section><h3 id="fetch">Fetch from the upstream remote and merge into your fork</h3>
 	<ol>
-		<li>Select the upstream remote so that you see <code>master => upstream/master</code> in the <code>Reference:</code> combo.
+		<li>Select the upstream remote so that you see <code>master => upstream/master</code> in the <code>Reference:</code> combo.<br>
 			<img src="images/select-upstream.png" alt="Upstream remote in the Reference: combo's dropdown"></img><br><br>
 		</li>
 		<li>Use the <code>Reference:</code> combo or the Incoming <code>Fetch</code> button to fetch from the upstream remote.<br>
@@ -85,7 +85,7 @@
 		<li>If there are Incoming changes, click the <code>Merge</code> button to merge them into your local fork (<code>origin/master</code>).<br>
 			<img src="images/merge.png" alt="Incoming section Merge button"></img><br><br>
 		</li>
-		<li>Expand local and checkout the master branch, so that you see <code>master => origin/master</code> in the <code>Reference:</code> combo.
+		<li>Expand local and checkout the master branch, so that you see <code>master => origin/master</code> in the <code>Reference:</code> combo.<br>
 			<img src="images/checkout-local-master.png" alt="Local fork's master branch Checkout button"></img><br><br>
 		</li>
 		<li>Click the <code>Push</code> button to push the Outgoing changes to your fork on GitHub.<br>
@@ -96,9 +96,11 @@
 
 	<section><h3 id="branch">Create a new branch on your fork and check it out</h3>
 	<ol>
-		<li>Select the remote for your local fork so that you see <code>master => origin/master</code> in the <code>Reference:</code> combo.</li>
+		<li>Expand local and checkout the master branch, so that you see <code>master => origin/master</code> in the <code>Reference:</code> combo.<br>
+			<img src="images/checkout-local-master.png" alt="Local fork's master branch Checkout button"></img><br><br>
+		</li>
 		<li>Use the <code>Reference:</code> combo to create a <code>New Branch</code>. The branch name should be <code>issueX</code>, where <code>X</code> is the Issue number.<br>
-			(GitHub requires a branch for each Pull Request).<br>
+			(GitHub requires a branch for each Pull Request, but an issue is not strictly required if it's a minor change).<br>
 			<img src="images/branch.png" alt="Reference combo New Branch button"></img><br><br>
 		</li>
 		<li>Find your new branch under <code>local</code> in the <code>Reference:</code> combo, and check it out by clicking the <code>Checkout branch</code> button.<br>
@@ -117,9 +119,8 @@
 		<li>When your changes are ready to commit, navigate to, and refresh, the <code>Git</code> page.</li>
 		<li>The <code>Reference:</code> should still be <code>issueX => <em>something</em>/issueX [New branch]</code>.</li>
 		<li>Review the changes and select the file(s) to commit.</li>
-		<li>Click on <code>more ...</code> and select <code>Add Change-ID to message</code> and <code>Add Signed-off-by to message</code>.</li>
-		<li>Make sure the <code>Author</code> and <code>Committer</code> name and email are correct.<br>
-			(You can enter them here, or on the <code>Git Settings</code> page).
+		<li>Click on <code>more ...</code> and make sure the <code>Author</code> and <code>Committer</code> name and email are correct.<br>
+			(You can enter them here (select <code>Save</code>), or on the <code>Git Settings</code> page).
 		</li>
 		<li>Describe the fix or feature in the commit message. Use <code>issue #X</code> to create a link to the issue.</li>
 		<li>Click <code>Commit</code> to commit your changes to your <code>issueX</code> branch.</li>
@@ -131,7 +132,7 @@
 	<img src="images/push.png" alt="Push to fork"></img>
 	</section>
 	
-	<section><h3 id="pr">Create the Pull Request on GitHub</h3>
+	<section><h3 id="pr">Create the Pull Request on GitHub (typically on github.com, except for otc_client)</h3>
 	<img src="images/pr.png" alt="Create pull request"></img>
 	</section>
 	</section>
